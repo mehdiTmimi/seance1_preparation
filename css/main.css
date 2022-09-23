@@ -30,6 +30,9 @@ table
     width: 100%;
     border-collapse: collapse;
 }
-table td, tbale th{
+table th{
+    background: lightgray;
+}
+table td, table th{
 border: 1px solid black;
 }
