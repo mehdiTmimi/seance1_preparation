@@ -1,4 +1,4 @@
-let ligne=1;
+
 const teste=()=>{
     alert("bonjour")
 }
@@ -12,8 +12,8 @@ const ajouter=()=>{
     let prenom=prenomInput.value
     // creation des elements
     let tr=document.createElement("tr")
-    tr.setAttribute("id","t"+ligne)
-    ligne++;
+
+
     let td1=document.createElement("td")
     let td2=document.createElement("td")
     let td3=document.createElement("td")
@@ -24,8 +24,11 @@ const ajouter=()=>{
     td3.appendChild(button)
     button.innerText="supprimer"
  //   button.setAttribute("onclick","supprimer()")
-    button.addEventListener("click",()=>{
+/*button.addEventListener("click",()=>{
         supprimer(tr.getAttribute("id"))
+    })*/
+    button.addEventListener("click",(event)=>{
+        supprimer(event.target.parentNode.parentNode)
     })
     // remplissage 
     td1.innerText=nom
@@ -36,6 +39,6 @@ const ajouter=()=>{
     nomInput.value=""
     prenomInput.value=""
 }
-let supprimer=(id)=>{
-    document.getElementById(id).remove()
+let supprimer=(ele)=>{
+    ele.remove()
 }
